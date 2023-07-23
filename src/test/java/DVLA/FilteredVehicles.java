@@ -55,9 +55,6 @@ public class FilteredVehicles extends ProjectMethods {
             e.printStackTrace();
         }
 
-
-
-
         System.out.println("Number of valid vehicles: " + filteredVehicles.size());
         System.out.println("Number of invalid vehicles: " + invalidVehiclesData.size());
 
@@ -69,16 +66,7 @@ public class FilteredVehicles extends ProjectMethods {
         writeDataToCSV(filteredVehicles, filteredVehiclesPath);
         writeDataToCSV(invalidVehiclesData, invalidVehiclesDataPath);
 
-
-
-
-
-
     }
-
-
-
-
 }
 
 
