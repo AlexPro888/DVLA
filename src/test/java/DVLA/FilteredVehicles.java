@@ -13,7 +13,7 @@ public class FilteredVehicles extends ProjectMethods {
 
     public static void main(String[] args) throws CsvValidationException {
 
-        // Initialize the List of vehicles to store the filtered records
+        // Initialize the Lists of vehicles to store the filtered records
         List<VehicleData> filteredVehicles = new ArrayList<>();
         List<VehicleData> invalidVehiclesData = new ArrayList<>();
 
