@@ -17,10 +17,13 @@
 
     <dependencies>
 
+
+
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.0.1</version>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version>
         </dependency>
 
 
@@ -28,12 +31,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.7.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>me.jvt.cucumber</groupId>
-            <artifactId>reporting-plugin</artifactId>
-            <version>7.3.0</version>
         </dependency>
 
         <!--If you want to get rid of SLF4J Failed to load message from the console -->
@@ -46,8 +43,10 @@
 
 
 
-
     </dependencies>
+
+
+
 
 
 </project>
