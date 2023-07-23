@@ -18,8 +18,6 @@ package DVLA;
             this.dateOfManufacture = dateOfManufacture;
         }
 
-
-
         @Override
         public String toString() {
             return "VehicleData{" +

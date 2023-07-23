@@ -42,6 +42,8 @@ public class ProjectMethods {
         return false;
     }
 
+
+
     public static String formatVehicleMake(String make) {
         String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
 
