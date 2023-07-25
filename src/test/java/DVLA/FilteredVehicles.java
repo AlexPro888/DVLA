@@ -3,7 +3,6 @@ package DVLA;
 import DVLA.utilities.ProjectMethods;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import org.junit.jupiter.api.AfterAll;
 
 import java.io.FileReader;
 import java.io.IOException;
