@@ -18,15 +18,7 @@ package DVLA;
             this.dateOfManufacture = dateOfManufacture;
         }
 
-        @Override
-        public String toString() {
-            return "VehicleData{" +
-                    "vrn='" + vrn + '\'' +
-                    ", make='" + make + '\'' +
-                    ", colour='" + colour + '\'' +
-                    ", dateOfManufacture='" + dateOfManufacture + '\'' +
-                    '}';
-        }
+
 
         //Adding getters
         public String getVrn() {

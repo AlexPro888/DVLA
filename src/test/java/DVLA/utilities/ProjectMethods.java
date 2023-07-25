@@ -15,7 +15,9 @@ import java.util.regex.Pattern;
 
 public class ProjectMethods {
 
-    public static boolean isValidVehicleNumber(String vrn) {
+    //All the methods have the protected access modifier to be inherited in other classes for a cleaner and reusable code
+
+    protected static boolean isValidVehicleNumber(String vrn) {
         // Remove spaces from the vehicleNumberPlate to match the pattern
         vrn = vrn.replaceAll("\\s", "");
         // The pattern checks for 2 uppercase/lowercase letters, followed by 2 digits, and then 3 uppercase/lowercase letters.
@@ -25,14 +27,14 @@ public class ProjectMethods {
 
 
     // Format the vehicle number to the correct format LLDD LLL
-    public static String formatVehicleNumber(String vrn) {
+    protected static String formatVehicleNumber(String vrn) {
         vrn = vrn.replaceAll("\\s", "");
         String firstPart = vrn.substring(0, 4);
         String secondPart = vrn.substring(4, 7);
         return (firstPart + " " + secondPart).toUpperCase();
     }
 
-    public static boolean isMakeValid(String make) {
+    protected static boolean isMakeValid(String make) {
         String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
         for (String validMake : validMakes) {
             if (make.equalsIgnoreCase(validMake)) {
@@ -44,7 +46,7 @@ public class ProjectMethods {
 
 
 
-    public static String formatVehicleMake(String make) {
+    protected static String formatVehicleMake(String make) {
         String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
 
         for (int i = 0; i < validMakes.length; i++) {
@@ -67,7 +69,7 @@ public class ProjectMethods {
     }
 
 
-    public static boolean isColourValid(String colour) {
+    protected static boolean isColourValid(String colour) {
         String[] validColours = {"White", "Black", "Red", "Blue"};
         for (String validColour : validColours) {
             if (colour.equalsIgnoreCase(validColour)) {
@@ -77,7 +79,7 @@ public class ProjectMethods {
         return false;
     }
 
-    public static String formatColour(String colour) {
+    protected static String formatColour(String colour) {
         String[] validColours = {"White", "Black", "Red", "Blue"};
         for (int i = 0; i < validColours.length; i++) {
             if (colour.equalsIgnoreCase(validColours[i])) {
@@ -97,7 +99,7 @@ public class ProjectMethods {
 
 
     //Check if dates are valid
-    public static boolean isValidDate(String inputDate) {
+    protected static boolean isValidDate(String inputDate) {
         // Define the valid date formats
         String[] validDateFormats = {"dd-MM-yyyy", "d-MM-yyyy", "dd/MM/yyyy", "d/MM/yyyy"};
 
@@ -129,9 +131,9 @@ public class ProjectMethods {
 
 
     //Format the dates as "E, dd MMMM yyyy"
-    private static final String[] validDateFormats = {"dd-MM-yyyy", "d-MM-yyyy", "dd/MM/yyyy", "d/MM/yyyy"};
+    protected static final String[] validDateFormats = {"dd-MM-yyyy", "d-MM-yyyy", "dd/MM/yyyy", "d/MM/yyyy"};
 
-    public static String formatDate(String inputDate) {
+    protected static String formatDate(String inputDate) {
         Date date = null;
         for (String format : validDateFormats) {
             try {
@@ -152,7 +154,7 @@ public class ProjectMethods {
 
 
 //Write data to CSV file with path
-    public static void writeDataToCSV(List<VehicleData> vehicleDataList, String filePath) {
+    protected static void writeDataToCSV(List<VehicleData> vehicleDataList, String filePath) {
         Path path = Paths.get(filePath);
         try (CSVWriter writer = new CSVWriter(new FileWriter(path.toFile()))) {
             // Create a header for the CSV file
@@ -176,7 +178,7 @@ public class ProjectMethods {
     }
 
     //Generate table
-    public static void generateTable(List<VehicleData> filteredVehicles) {
+    protected static void generateTable(List<VehicleData> filteredVehicles) {
 
         // Table header
         System.out.println("----------------------------------------------------------");
