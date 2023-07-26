@@ -26,8 +26,6 @@ public class DDT extends ProjectMethods {
         vehicles.put("colour", colour);
         vehicles.put("dateOfManufacture", dateOfManufacture);
 
-
-
         // Validate VRN
         boolean isVRNvalid = isValidVehicleNumber(vrn);
         Assertions.assertTrue(isVRNvalid, "Invalid VRN: " + vrn);
@@ -43,10 +41,7 @@ public class DDT extends ProjectMethods {
         // Validate dateOfManufacture
         boolean isDateValid = isValidDate(dateOfManufacture);
         Assertions.assertTrue(isDateValid, "Invalid date: " + dateOfManufacture);
-
-
         }
-
     }
 
 

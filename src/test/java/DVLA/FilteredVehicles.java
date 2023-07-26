@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.*;
 
 public class FilteredVehicles extends ProjectMethods {
-
     public static void main(String[] args) throws CsvValidationException {
 
         // Initialize the Lists of vehicles to store the filtered records

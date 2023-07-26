@@ -18,22 +18,13 @@ public class ProjectMethods {
     //All the methods have the protected access modifier to be inherited in other classes for a cleaner and reusable code
 
     protected static boolean isValidVehicleNumber(String vrn) {
-        // Remove spaces from the vehicleNumberPlate to match the pattern
+        // Remove spaces from the vehicleNumberRegistration to match the pattern
         vrn = vrn.replaceAll("\\s", "");
-        // The pattern checks for 2 uppercase/lowercase letters, followed by 2 digits, and then 3 uppercase/lowercase letters.
+        // The pattern checks for 2 uppercase/lowercase letters, followed by 2 digits,
+        // and then 3 uppercase/lowercase letters.
         Pattern pattern = Pattern.compile("[A-Za-z]{2}\\d{2}[A-Za-z]{3}");
         return pattern.matcher(vrn).matches();
     }
-
-
-    // Format the vehicle number to the correct format LLDD LLL
-    protected static String formatVehicleNumber(String vrn) {
-        vrn = vrn.replaceAll("\\s", "");
-        String firstPart = vrn.substring(0, 4);
-        String secondPart = vrn.substring(4, 7);
-        return (firstPart + " " + secondPart).toUpperCase();
-    }
-
     protected static boolean isMakeValid(String make) {
         String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
         for (String validMake : validMakes) {
@@ -43,32 +34,6 @@ public class ProjectMethods {
         }
         return false;
     }
-
-
-
-    protected static String formatVehicleMake(String make) {
-        String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
-
-        for (int i = 0; i < validMakes.length; i++) {
-            if (make.equalsIgnoreCase(validMakes[i])) {
-                switch (validMakes[i]) {
-                    case "BMW":
-                    case "VW":
-                        make = validMakes[i].toUpperCase();
-                        break;
-                    case "Audi":
-                    case "Mercedes":
-                        make = validMakes[i].substring(0, 1).toUpperCase() + validMakes[i].substring(1).toLowerCase();
-                        break;
-                }
-                break; // Exit the loop once a valid make is found and formatted
-            }
-        }
-
-        return make;
-    }
-
-
     protected static boolean isColourValid(String colour) {
         String[] validColours = {"White", "Black", "Red", "Blue"};
         for (String validColour : validColours) {
@@ -78,27 +43,8 @@ public class ProjectMethods {
         }
         return false;
     }
-
-    protected static String formatColour(String colour) {
-        String[] validColours = {"White", "Black", "Red", "Blue"};
-        for (int i = 0; i < validColours.length; i++) {
-            if (colour.equalsIgnoreCase(validColours[i])) {
-                switch (validColours[i]) {
-                    case "White":
-                    case "Black":
-                    case "Red":
-                    case "Blue":
-                        colour = validColours[i].substring(0, 1).toUpperCase() + validColours[i].substring(1).toLowerCase();
-                        break;
-                }
-                break; // Exit the loop once a valid make is found and formatted
-            }
-        }
-        return colour;
-    }
-
-
     //Check if dates are valid
+
     protected static boolean isValidDate(String inputDate) {
         // Define the valid date formats
         String[] validDateFormats = {"dd-MM-yyyy", "d-MM-yyyy", "dd/MM/yyyy", "d/MM/yyyy"};
@@ -129,7 +75,52 @@ public class ProjectMethods {
         return date != null;
     }
 
+    // Format the VRN to the correct format "LLDD LLL"
+    protected static String formatVehicleNumber(String vrn) {
+        vrn = vrn.replaceAll("\\s", "");
+        String firstPart = vrn.substring(0, 4);
+        String secondPart = vrn.substring(4, 7);
+        return (firstPart + " " + secondPart).toUpperCase();
+    }
+    protected static String formatVehicleMake(String make) {
+        String[] validMakes = {"Audi", "BMW", "VW", "Mercedes"};
 
+        for (int i = 0; i < validMakes.length; i++) {
+            if (make.equalsIgnoreCase(validMakes[i])) {
+                switch (validMakes[i]) {
+                    case "BMW":
+                    case "VW":
+                        make = validMakes[i].toUpperCase();
+                        break;
+                    case "Audi":
+                    case "Mercedes":
+                        make = validMakes[i].substring(0, 1).toUpperCase()
+                                + validMakes[i].substring(1).toLowerCase();
+                        break;
+                }
+                break; // Exit the loop once a valid make is found and formatted
+            }
+        }
+        return make;
+    }
+    protected static String formatColour(String colour) {
+        String[] validColours = {"White", "Black", "Red", "Blue"};
+        for (int i = 0; i < validColours.length; i++) {
+            if (colour.equalsIgnoreCase(validColours[i])) {
+                switch (validColours[i]) {
+                    case "White":
+                    case "Black":
+                    case "Red":
+                    case "Blue":
+                        colour = validColours[i].substring(0, 1).toUpperCase()
+                                + validColours[i].substring(1).toLowerCase();
+                        break;
+                }
+                break; // Exit the loop once a valid make is found and formatted
+            }
+        }
+        return colour;
+    }
     //Format the dates as "E, dd MMMM yyyy"
     protected static final String[] validDateFormats = {"dd-MM-yyyy", "d-MM-yyyy", "dd/MM/yyyy", "d/MM/yyyy"};
 
