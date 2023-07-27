@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class ProjectMethods {
 
-    //All the methods have the protected access modifier to be inherited in other classes for a cleaner and reusable code
+    //All the methods have the protected access modifier and inherited in other classes for a cleaner and reusable code
 
     protected static boolean isValidVehicleNumber(String vrn) {
         // Remove spaces from the vehicleNumberRegistration to match the pattern

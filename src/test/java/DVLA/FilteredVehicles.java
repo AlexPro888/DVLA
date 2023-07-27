@@ -35,7 +35,7 @@ public class FilteredVehicles extends ProjectMethods {
                         && isColourValid(colour)
                         && isValidDate(dateOfManufacture)) {
 
-                    // Create a new VehicleData object with the filtered data
+                    // Create a new VehicleData object with the filtered and formatted data
                     VehicleData vehicle = new VehicleData(formatVehicleNumber(vrn),
                             formatVehicleMake(make),
                             formatColour(colour),
@@ -46,17 +46,14 @@ public class FilteredVehicles extends ProjectMethods {
                 } else {
                     VehicleData invalidVehicleData = new VehicleData(vrn, make, colour, dateOfManufacture);
                     invalidVehiclesData.add(invalidVehicleData);
-
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         String filteredVehiclesPath = "src/test/resources/filteredVehicles.csv";
         String invalidVehiclesDataPath = "src/test/resources/invalidVehicleData.csv";
-
 
         writeDataToCSV(filteredVehicles, filteredVehiclesPath);
         writeDataToCSV(invalidVehiclesData, invalidVehiclesDataPath);
